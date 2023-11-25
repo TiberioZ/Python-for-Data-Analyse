@@ -1,43 +1,11 @@
 import streamlit as st
-import pandas as pd
 
-st.write("""
-# My firt app!
-""")
+st.set_page_config(
+    page_title= "Project APP"
+    page_icon= "💊"
+)
 
-column_names = ['ID',
-                'Age', 
-                'Gender', 
-                'Education', 
-                'Country', 
-                'Ethnicy', 
-                'Nscore', 
-                'Escore', 
-                'Oscore', 
-                'Ascore', 
-                'Cscore', 
-                'Impulsive', 
-                'SS', 
-                'Alcohol', 
-                'Amphet', 
-                'Amyl', 
-                'Benzos', 
-                'Caff', 
-                'Cannabis', 
-                'Choc',
-                'Coke',
-                'Crack',
-                'Ecstasy',
-                'Heroin',
-                'Ketamine',
-                'Legalh',
-                'LSD',
-                'Meth',
-                'Mushrooms',
-                'Nicotine',
-                'Semer',
-                'VSA']
+st.title = "Drug consumption projet"
+st.sidebar()
 
-df = pd.read_csv(r"C:\Users\tzolz\Desktop\PythonforDA\DATA\drug_consumption.data", sep=',', index_col=0, names=column_names)
-st.line_chart(df['Age'])
 
