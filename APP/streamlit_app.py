@@ -1,4 +1,9 @@
+import streamlit as st
 import pandas as pd
+
+st.write("""
+# My firt app!
+""")
 
 column_names = ['ID',
                 'Age', 
@@ -34,7 +39,5 @@ column_names = ['ID',
                 'VSA']
 
 df = pd.read_csv(r"C:\Users\tzolz\Desktop\PythonforDA\DATA\drug_consumption.data", sep=',', index_col=0, names=column_names)
-print(df.head())
-
-
+st.line_chart(df['Age'])
 
