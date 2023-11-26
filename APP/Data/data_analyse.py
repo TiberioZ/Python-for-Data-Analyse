@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 df = pd.read_csv(r"C:\Users\tzolz\Desktop\PythonforDA\APP\Data\clean_df.csv", sep=',')
 
 def barplot(column_name: str, ax):
-    sns.countplot(x=column_name, data=df, order=['CL0', 'CL1', 'CL2', 'CL3', 'CL4', 'CL5', 'CL6'], ax=ax,)
+    sns.countplot(x=column_name, data=df, order=['0', '1', '2', '3', '4', '5', '6'], ax=ax,)
     ax.set_ylim(0, 1500)
     return ax
 
