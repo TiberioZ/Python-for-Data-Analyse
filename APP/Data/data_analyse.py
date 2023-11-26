@@ -5,36 +5,17 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 
-df = pd.read_csv(r"C:\Users\tzolz\Desktop\PythonforDA\APP\Data\clean_df.csv", sep=',')
+class DataAnalyse():
 
-def barplot(column_name: str, ax):
-    sns.countplot(x=column_name, data=df, order=['0', '1', '2', '3', '4', '5', '6'], ax=ax,)
-    ax.set_ylim(0, 1500)
-    return ax
+    def __init__(self, file_path):
+        self.df = pd.read_csv(file_path)
 
 
-df_barplot = df.iloc[:, 13:32]
-plot_list = []
-
-nb_cols = len(df_barplot.columns)
-num_cols = 4
-num_rows = ceil(nb_cols/4)
-fig, axs = plt.subplots(num_rows, num_cols)
-
-# Iterate over columns and create count plots
-for i, column in enumerate(df_barplot.columns):
-    ax = axs[i] if num_rows == 1 else axs[i // num_cols, i % num_cols]
-    plot_list.append(barplot(column, ax))
-
-# Hide any remaining empty subplots
-for i in range(len(df_barplot.columns), num_cols * num_rows):
-    axs.flatten()[i].axis('off')
-
-
-fig.show()
-
-
-
+    def barplot(self, column_name: str):
+        df = self.df
+        counts = df[column_name].value_counts()
+        df_counts = pd.DataFrame({'categories': counts.index, 'nb of people': counts.values})
+        return df_counts
 
 
 

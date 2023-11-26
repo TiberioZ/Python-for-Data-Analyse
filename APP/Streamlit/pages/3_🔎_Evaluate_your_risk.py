@@ -4,11 +4,16 @@ import streamlit as st
 import sys
 sys.path.append(r'C:/Users/tzolz/Desktop/PythonforDA')
 
-from APP.Data.ml_model import MachineLearning
+from APP.Data.machine_learning import MachineLearning
 from APP.Data.score_data import Conversion
 
 ml_instance = MachineLearning(r"C:\Users\tzolz\Desktop\PythonforDA\APP\Data\clean_df.csv")
 convert = Conversion()
+
+st.set_page_config(
+    page_title= "Project APP",
+    page_icon= "💊"
+)
 
 st.title("Evaluate your risk of being a drug consumer")
 st.markdown("Fill all the option in this page and click on the button at the end to see your results")
@@ -54,7 +59,7 @@ education = st.selectbox(
                 "Left school at 17 years",
                 "Left school at 18 years",
                 "Some college or university, no certificate or degree",
-                "Professional certificate / diploma",
+                "Professional certificate/diploma",
                 "University degree",
                 "Masters degree",
                 "Doctorate degree"
@@ -106,7 +111,7 @@ if st.button("Check results", type = "primary", use_container_width = True):
         }
 
     user_df = pd.DataFrame(user_data)
-    result = ml_instance.prediction_drugs(user_df)
+    result = ml_instance.dataframe_prediction_drugs(user_df)
 
     result = result.replace({0: 'low risk', 1: 'high risk'})
    
@@ -127,3 +132,6 @@ if st.button("Check results", type = "primary", use_container_width = True):
 
     # Display the styled DataFrame in Streamlit
     st.dataframe(styled_df, hide_index=True)
+
+    st.write("⚠️ **High risk** represents individuals who have used drugs at least once in the past 10 years.")
+    st.write("✅ **Low risk** represents individuals who used this drug more than 10 years ago or have never used it.")
