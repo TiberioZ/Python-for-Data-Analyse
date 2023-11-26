@@ -2,7 +2,7 @@ import time
 import pandas as pd
 import streamlit as st
 import sys
-sys.path.append(r'C:\Users\tzolz\Desktop\PythonforDA')
+sys.path.append(r'C:/Users/tzolz/Desktop/PythonforDA')
 
 from APP.Data.ml_model import MachineLearning
 from APP.Data.score_data import Conversion
@@ -69,8 +69,8 @@ escore = st.slider("**Extraversion :** the term refers to a state of being where
 oscore = st.slider("**Openness to experience :** a sense of curiosity, open-mindedness, and acceptance of novel experiences.",min_value=24, max_value=60)
 ascore = st.slider("**Agreeableness :** a person's ability to put others needs before their own.",min_value=12, max_value=60)
 cscore = st.slider("**Conscientiousness :** Conscientiousness is the personality trait of being careful or diligent",min_value=17, max_value=59)
-impulsive = st.slider("**Impulsiveness :** behaving without thinking and without realizing the risk involved in the behavior.",min_value=0, max_value=10)
-ss = st.slider("**Sensation seeking :**  the tendency to pursue new and different sensations, feelings, and experiences.",min_value=0, max_value=11)
+impulsive = st.slider("**Impulsiveness :** behaving without thinking and without realizing the risk involved in the behavior.",min_value=1, max_value=10)
+ss = st.slider("**Sensation seeking :**  the tendency to pursue new and different sensations, feelings, and experiences.",min_value=1, max_value=11)
 
 
 st.write(" ")
@@ -85,49 +85,30 @@ if st.button("Check results", type = "primary", use_container_width = True):
     time.sleep(1)
     my_bar.empty()
 
-    
+    age_str = str(age)
+    gender_str = str(gender)
+    education_str = str(education)
+    country_str = str(country)
+    ethnicity_str = str(ethnicity)
     user_data = {
-        'Age': convert.get_value_from_age_group(age),
-        'Gender': convert.get_value_from_gender(gender),  
-        'Education': convert.get_education_value(education),  
-        'Country': convert.get_country_value(country),  
-        'Ethnicity': convert.get_ethnicity_value(ethnicity),  
-        'Nscore': convert.get_nscore_value(nscore),
-        'Escore': convert.get_escore_value(escore),
-        'Oscore': convert.get_oscore_value(oscore),
-        'Ascore': convert.convert_ascore_to_value(ascore),
-        'Cscore': convert.convert_value_to_cscore(cscore),
-        'Impulsive': convert.convert_to_impulsiveness(impulsive),
-        'SS': convert.convert_to_sensation_seeking(ss)
+        'Age': [convert.get_value_from_age_group(age_str)],
+        'Gender': [convert.get_value_from_gender(gender_str)],  
+        'Education': [convert.get_education_value(education_str)],  
+        'Country': [convert.get_country_value(country_str)],  
+        'Ethnicity': [convert.get_ethnicity_value(ethnicity_str)],  
+        'Nscore': [convert.get_nscore_value(nscore)],
+        'Escore': [convert.get_escore_value(escore)],
+        'Oscore': [convert.get_oscore_value(oscore)],
+        'Ascore': [convert.convert_ascore_to_value(ascore)],
+        'Cscore': [convert.convert_value_to_cscore(cscore)],
+        'Impulsive': [convert.convert_to_impulsiveness(impulsive)],
+        'SS': [convert.convert_to_sensation_seeking(ss)]
         }
 
     user_df = pd.DataFrame(user_data)
     result = ml_instance.prediction_drugs(user_df)
 
-    columns_name = [
-        'Alcohol', 
-        'Amphet', 
-        'Amyl', 
-        'Benzos', 
-        'Caff', 
-        'Cannabis', 
-        'Choc',
-        'Coke',
-        'Crack',
-        'Ecstasy',
-        'Heroin',
-        'Ketamine',
-        'Legalh',
-        'LSD',
-        'Meth',
-        'Mushrooms',
-        'Nicotine',
-        'Semer',
-        'VSA'
-    ]
-
-    result_df = pd.DataFrame(result, columns= columns_name)
-    result_df = result_df.replace({'0': 'Low risk', '1': 'High risk'})
+    result = result.replace({0: 'low risk', 1: 'high risk'})
    
     def style_cells(value):
         style = 'font-weight: bold; text-align: center;'

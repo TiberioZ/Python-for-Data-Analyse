@@ -33,11 +33,34 @@ class MachineLearning():
         return y_pred
     
     def prediction_drugs(self, user_data: pd.DataFrame):
-        predictions = []
+        predictions = [[]]
+        columns_name = [
+        'Alcohol', 
+        'Amphet', 
+        'Amyl', 
+        'Benzos', 
+        'Caffeine', 
+        'Cannabis', 
+        'Chocolate',
+        'Coke',
+        'Crack',
+        'Ecstasy',
+        'Heroin',
+        'Ketamine',
+        'Legalh',
+        'LSD',
+        'Meth',
+        'Mushrooms',
+        'Nicotine',
+        'Semer',
+        'VSA'
+        ]
 
         for model in self.models:
             prediction = self.prediction_drug_consumption(user_data, model)
-            predictions.append(prediction)
+            predictions[0].append(prediction)
 
-        return predictions
+        result_df = pd.DataFrame(predictions, columns=columns_name)
+
+        return result_df
     

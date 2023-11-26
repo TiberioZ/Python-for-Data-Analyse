@@ -16,7 +16,7 @@ class Conversion():
         return result
     
 
-    def get_value_from_gender(gender:str):
+    def get_value_from_gender(self, gender:str):
         gender_mapping = {
             'Female': 0.48246,
             'Male': -0.48246
@@ -25,7 +25,7 @@ class Conversion():
         return gender_mapping.get(gender, None)
     
     
-    def get_education_value(education_meaning:str):
+    def get_education_value(self, education_meaning:str):
         education_mapping = {
             'Left school before 16 years': -2.43591,
             'Left school at 16 years': -1.73790,
@@ -41,7 +41,7 @@ class Conversion():
         return education_mapping.get(education_meaning, None)
     
 
-    def get_country_value(country_meaning:str):
+    def get_country_value(self, country_meaning:str):
         country_mapping = {
             'Australia': -0.09765,
             'Canada': 0.24923,
@@ -54,7 +54,7 @@ class Conversion():
 
         return country_mapping.get(country_meaning, None)
     
-    def get_ethnicity_value(ethnicity_meaning):
+    def get_ethnicity_value(self, ethnicity_meaning):
         ethnicity_mapping = {
             'Asian': -0.50212,
             'Black': -1.10702,
@@ -68,7 +68,7 @@ class Conversion():
         return ethnicity_mapping.get(ethnicity_meaning, None)
     
 
-    def get_nscore_value(nscore_meaning):
+    def get_nscore_value(self, nscore_meaning):
         nscore_mapping = {
             12: -3.46436,
             13: -3.15735,
@@ -124,7 +124,7 @@ class Conversion():
         return nscore_mapping.get(nscore_meaning, None)
     
 
-    def get_escore_value(escore_meaning):
+    def get_escore_value(self, escore_meaning):
         escore_mapping = {
             16: -3.27393,
             17: -3.10,
@@ -175,7 +175,7 @@ class Conversion():
         return escore_mapping.get(escore_meaning, None)
     
 
-    def get_oscore_value(oscore_meaning):
+    def get_oscore_value(self, oscore_meaning):
         oscore_mapping = {
             24: -3.27393,
             25: -3,
@@ -219,7 +219,7 @@ class Conversion():
         return oscore_mapping.get(oscore_meaning, None)
     
 
-    def convert_ascore_to_value(ascore):
+    def convert_ascore_to_value(self, ascore):
         conversion_table = {
         12: -3.46436,
         13: -3.35,
@@ -278,7 +278,7 @@ class Conversion():
 
 
 
-    def convert_value_to_cscore(value):
+    def convert_value_to_cscore(self, value):
         cscore_mapping = {
             17: -3.46436, 19: -3.15735, 20: -2.90161, 21: -2.72827, 22: -2.57309,
             23: -2.42317, 24: -2.30408, 25: -2.18109, 26: -2.04506, 27: -1.92173,
@@ -294,7 +294,7 @@ class Conversion():
         return cscore_mapping.get(value, None)
     
 
-    def convert_to_impulsiveness(score):
+    def convert_to_impulsiveness(self, score):
         conversion_table = {
             1: -2.55524,
             2: -1.37983,
@@ -312,7 +312,7 @@ class Conversion():
         return impulsiveness
     
 
-    def convert_to_sensation_seeking(score):
+    def convert_to_sensation_seeking(self, score):
         conversion_table = {
             1: -2.07848,
             2: -1.54858,
