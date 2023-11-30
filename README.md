@@ -17,7 +17,7 @@ In this project, we conducted an analysis of data, performed processing, and und
 
 ### Data Pre-processing, Visualization, and Modeling
 
-To prepare the data for visualization and modeling, we performed cleaning operations detailed in the notebook (APP/Data/data_preprocessing.py). In the raw dataset (drug_consumption.data), numerical values were used for each category; for instance, Male and Female were replaced by -0.48246 and 0.48246. A mapping file (score_data.py) was created to replace these values during data visualization. We assigned column names, checked for null values, and replaced the 7 drug consumption classes (CL0 to CL6) with integers (0 to 6).
+To prepare the data for visualization and modeling, we performed cleaning operations detailed in the notebook (data_preprocessing.py). In the raw dataset (drug_consumption.data), numerical values were used for each category; for instance, Male and Female were replaced by -0.48246 and 0.48246. A mapping file (score_data.py) was created to replace these values during data visualization. We assigned column names, checked for null values, and replaced the 7 drug consumption classes (CL0 to CL6) with integers (0 to 6).
 
 Two new dataframes were generated:
 
