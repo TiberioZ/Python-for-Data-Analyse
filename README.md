@@ -13,7 +13,7 @@ https://archive.ics.uci.edu/dataset/373/drug+consumption+quantified
 
 In this project, we conducted an analysis of data, performed processing, and undertook modeling training using an online dataset. The dataset involves the consumption of 19 legal and illegal drugs by 1,885 individuals globally, evaluated through 12 criteria in a survey. Participants were questioned about their usage of substances such as cannabis, nicotine, cocaine, LSD, or caffeine, providing information on the last time they consumed these substances, resulting in the creation of 7 categories ranging from "Never used" to "Used in the last day." The primary objective of this project is to determine:
 
-**Which demographic is most susceptible to drug consumption, and which drugs pose the highest risk of consumption?**
+**Which population is most susceptible to drug consumption for each drug, and which drugs pose the highest risk of consumption based on your personal data?**
 
 ### Data Pre-processing, Visualization, and Modeling
 
