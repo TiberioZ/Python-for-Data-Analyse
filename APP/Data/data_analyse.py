@@ -112,5 +112,3 @@ class DataAnalyse():
         edu.index = edu.index.map(inverse_edu_mapping)
         df_edu = pd.DataFrame({'left school': edu.index, '% nb of people':edu.values})
         col2.bar_chart(df_edu, x="left school", y="% nb of people", color="#F63366", height=300)
-
-
