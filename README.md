@@ -1,31 +1,56 @@
 # Python for Data Analysis
-Final projet 2023 python for data analys
+Final Project 2023: Python for Data Analysis
 
-**our dataset :**
+**Dataset:**
 https://archive.ics.uci.edu/dataset/373/drug+consumption+quantified
 
-**our team :**
+**Team Members:**
+
 - Tiberio Zolzettich
 - Keziah Tabassomi
 
-# Introduction
+### Introduction
 
-For this project, we analyzed data, did proccessing and modeling training. We based our work on an online data set. The dataset deals with the consumption of 19 legal and illegal drugs by 1,885 people around the world. They are the result of a survey in which participants were evaluated according to 12 criteria. Respondents were also asked about their use of substances such as cannabis, nicotine, cocaine, LSD or caffeine. They were asked to specify the last time they had used these substances, leading to the creation of 7 categories, ranging from "Never used" to "Used in the last day". The main subject of this project is to find out : 
+In this project, we conducted an analysis of data, performed processing, and undertook modeling training using an online dataset. The dataset involves the consumption of 19 legal and illegal drugs by 1,885 individuals globally, evaluated through 12 criteria in a survey. Participants were questioned about their usage of substances such as cannabis, nicotine, cocaine, LSD, or caffeine, providing information on the last time they consumed these substances, resulting in the creation of 7 categories ranging from "Never used" to "Used in the last day." The primary objective of this project is to determine:
 
-**Which people are most at risk of taking drugs and what are the drugs that you are at risk to consume ?**
+**Which demographic is most susceptible to drug consumption, and which drugs pose the highest risk of consumption?**
 
-# Step 1 : Data pre-processing
+### Data Pre-processing, Visualization, and Modeling
 
-We had to clean up the data in order to use it for data visualization and modeling. We did all the cleaning process in a notebook (APP/Notebooks/data_preproccessing.py). On the raw dataset (APP/Data/drug_consumption.data) we can see only numbers for each categories for exemple Male and Female are replace by -0.48246 and 0.48246. We create a mapping file (APP/Data/score_data.py) to replace all this values every time we want to show data vizualisation. We put columns name to each column, verify that there are not null values, replace the 7 drug consumption class (CL0 to CL6) by integer (0 to 6).
+To prepare the data for visualization and modeling, we performed cleaning operations detailed in the notebook (data_preprocessing.py). In the raw dataset (drug_consumption.data), numerical values were used for each category; for instance, Male and Female were replaced by -0.48246 and 0.48246. A mapping file (score_data.py) was created to replace these values during data visualization. We assigned column names, checked for null values, and replaced the 7 drug consumption classes (CL0 to CL6) with integers (0 to 6).
 
-We create two new dataframe : 
-- (APP/Data/df.csv) with the 7 class of drug consumption for some data visualization.
-- (APP/Data/clean_df.csv) in this dataframe there are only two drug consumption class. "Never used" or "Used over a decade" are replaced by 0 (non consummer) and other class are replaced by 1 (consummer). This dataframe will simplify all the process for modeling and for evaluate your risk of being a drug consummer.
+Two new dataframes were generated:
 
-# Step 2 : Data visualization & Webapp
+(APP/Data/df.csv) containing the 7 drug consumption classes for data visualization.
+(APP/Data/clean_df.csv) with only two drug consumption classes: "Never used" or "Used over a decade" replaced by 0 (non-consumer), and other classes replaced by 1 (consumer). This dataframe simplifies the modeling process and risk evaluation for drug consumption.
+Data visualization can be observed on the Streamlit web app, showcasing various bar plots representing the distribution of drug consumption.
 
+After reviewing the data visualization, we experimented with different models to identify the best fit for this project. The optimal model for this dataframe is "logistic regression," a classification model. With this model's training, we can assess the risk of an individual being a drug consumer based on the provided 12 criteria.
 
+**Possible improvements for greater precision:** retrieve the test results and ask the person whether the result is good for each drug, so as to be able to improve the model with weightings on the different data.
 
-# Step 3 : Modeling
+### Execution
 
-# API with FastAPI
+#### Streamlit Web App
+
+To run this project, follow these steps:
+
+  1. Clone the Git repository.
+  2. Install the required dependencies via pip install -r requirements.txt.
+  3. Execute in the terminal "Streamlit run {absolute path of 1_👋_Welcome.py}"
+
+#### API by FastAPI
+
+To run the API of this project, follow these steps:
+
+  1. Clone the Git repository.
+  2. Install the required dependencies via pip install -r requirements.txt.
+  3. Run the main.py file.
+  4. Open http://127.0.0.1:5000/docs for the API documentation.
+     
+### Tools
+
+- Python files & notebooks
+- Libraries: Pandas, NumPy, Scikit-Learn, Matplotlib, etc.
+- Streamlit (WebApp)
+- FastApi (API)
