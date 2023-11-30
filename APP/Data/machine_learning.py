@@ -68,7 +68,7 @@ class MachineLearning():
     
     def dataframe_prediction_drugs(self, user_data: pd.DataFrame):
         prediction_dict = self.prediction_drugs(user_data)
-        result_df = pd.DataFrame(prediction_dict)
+        result_df = pd.DataFrame(prediction_dict, index=[0])
 
         return result_df
 

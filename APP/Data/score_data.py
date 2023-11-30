@@ -14,7 +14,7 @@ class Conversion():
 
         result = age_mapping.get(age_group, None)
         return result
-    
+
 
     def get_value_from_gender(self, gender:str):
         gender_mapping = {

@@ -17,9 +17,12 @@ st.set_page_config(
 
 st.title ("All the statistics about the training data")
 st.markdown("")
+st.subheader("I. Distribution of people who used each drug")
+st.markdown("")
+
 
 columns_name = [
-    'Alcohol', 'Amphet', 'Amyl', 'Benzos', 'Caff', 'Cannabis', 'Choc',
+    'Alcohol', 'Amphet', 'Amyl', 'Benzos', 'Caffeine', 'Cannabis', 'Chocolate',
     'Coke', 'Crack', 'Ecstasy', 'Heroin', 'Ketamine', 'Legalh', 'LSD', 'Meth',
     'Mushrooms', 'Nicotine', 'Semer', 'VSA'
 ]
@@ -47,6 +50,17 @@ for substance in columns_name:
     
     counter += 1
 
+
+st.markdown("")
+st.subheader("II. Distribution of drug users by age, country, ethnicity and education")
+st.markdown("")
+
+drug_selected = st.selectbox("Drug",['Alcohol', 'Amphet', 'Amyl', 'Benzos', 'Caffeine', 'Cannabis', 'Chocolate',
+            'Coke', 'Crack', 'Ecstasy', 'Heroin', 'Ketamine', 'Legalh', 'LSD', 'Meth',
+            'Mushrooms', 'Nicotine', 'Semer', 'VSA'])
+
+st.markdown("")
+analyse.drug_distribution(drug_selected)
 
 
 
