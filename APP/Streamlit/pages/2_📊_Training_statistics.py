@@ -1,6 +1,8 @@
 from matplotlib import pyplot as plt
 import seaborn as sns
 import streamlit as st
+import sys
+sys.path.append(r"C:\Users\tzolz\Desktop\PythonforDA")
 
 from APP.Data.data_analyse import DataAnalyse
 
