@@ -2,9 +2,7 @@ from matplotlib import pyplot as plt
 import seaborn as sns
 import streamlit as st
 
-from Data.data_analyse import DataAnalyse
-
-
+from APP.Data.data_analyse import DataAnalyse
 
 
 analyse = DataAnalyse(r"C:\Users\tzolz\Desktop\PythonforDA\APP\Data\df.csv")

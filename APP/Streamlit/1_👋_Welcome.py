@@ -1,6 +1,4 @@
 import streamlit as st
-import sys
-sys.path.append(r'C:/Users/tzolz/Desktop/PythonforDA')
 import subprocess
 
 
