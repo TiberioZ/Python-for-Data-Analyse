@@ -2,6 +2,7 @@ from matplotlib import pyplot as plt
 import seaborn as sns
 import streamlit as st
 import sys
+import numpy as np
 sys.path.append(r"C:\Users\tzolz\Desktop\PythonforDA")
 
 from APP.Data.data_analyse import DataAnalyse
@@ -60,6 +61,8 @@ drug_selected = st.selectbox("Drug",['Alcohol', 'Amphet', 'Amyl', 'Benzos', 'Caf
 
 st.markdown("")
 analyse.drug_distribution(drug_selected)
+
+
 
 
 
