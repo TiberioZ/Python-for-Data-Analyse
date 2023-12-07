@@ -5,7 +5,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import streamlit as st
 
-from APP.Data.score_data import Conversion
+from APP.Data.mapping import Conversion
 
 
 class DataAnalyse():

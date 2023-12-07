@@ -6,7 +6,7 @@ import pandas as pd
 from pydantic import BaseModel
 import sys
 
-from APP.Data.score_data import Conversion
+from APP.Data.mapping import Conversion
 sys.path.append(r'C:/Users/tzolz/Desktop/PythonforDA')
 
 from APP.API.basemodels import Result, User

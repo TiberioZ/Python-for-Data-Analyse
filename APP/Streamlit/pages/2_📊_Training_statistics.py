@@ -16,7 +16,7 @@ st.set_page_config(
 
 st.title ("All the statistics about the training data")
 st.markdown("")
-st.subheader("I. Distribution of people who used each drug")
+st.subheader("I. Distribution of people according to the last time they used each drug")
 st.markdown("")
 
 
@@ -51,7 +51,7 @@ for substance in columns_name:
 
 
 st.markdown("")
-st.subheader("II. Distribution of drug users by age, country, ethnicity and education")
+st.subheader("II. Percentage of people by category using this drug")
 st.markdown("")
 
 drug_selected = st.selectbox("Drug",['Alcohol', 'Amphet', 'Amyl', 'Benzos', 'Caffeine', 'Cannabis', 'Chocolate',

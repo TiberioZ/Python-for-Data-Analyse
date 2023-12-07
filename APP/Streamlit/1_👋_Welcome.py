@@ -17,7 +17,9 @@ st.markdown("")
 st.markdown("""
 Welcome to our webapp!
 
-For this project, we analyzed data, did proccessing and modeling training. We based our work on an online data set. The dataset deals with the consumption of 19 legal and illegal drugs by 1,800 people around the world. The main subject of this project is to find out which people are most at risk of taking drugs.
+For this project, we analyzed data, did proccessing and modeling training. We based our work on an online data set : https://archive.ics.uci.edu/dataset/373/drug+consumption+quantified.
+
+The dataset deals with the consumption of 19 legal and illegal drugs by 1,800 people around the world. The main subject of this project is to find out which people are most at risk of taking drugs.
 
 """)
 st.subheader("Analyse, train and modeling")
@@ -29,6 +31,6 @@ This webapp contains two pages:
             
 The results on the second page are calculated using "logistic regression" modeling, which we found to be the most accurate model in our case. 
 
-**Possible improvements for greater precision:** retrieve the test results and ask the person whether the result is good for each drug, so as to be able to improve the model with weightings on the different data.
+**Possible improvements for better precision:** retrieve the test results and ask the person whether the result is good for each drug, so as to be able to improve the model with weightings on the different data.
 """)
 

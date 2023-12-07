@@ -5,7 +5,7 @@ import sys
 sys.path.append(r"C:\Users\tzolz\Desktop\PythonforDA")
 
 from APP.Data.machine_learning import MachineLearning
-from APP.Data.score_data import Conversion
+from APP.Data.mapping import Conversion
 
 ml_instance = MachineLearning(r"C:\Users\tzolz\Desktop\PythonforDA\APP\Data\clean_df.csv")
 convert = Conversion()
