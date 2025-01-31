@@ -1,4 +1,4 @@
-# risk of drug consumption
+# Risk of Drug Consumption
 Final Project 2023: Python for Data Analysis
 
 **Dataset:**
